@@ -1,0 +1,17 @@
+<Project>
+
+  <PropertyGroup>
+    <Authors>沙漠尽头的狼</Authors>
+    <Copyright>Copyright (c) 2024 https://codewf.com</Copyright>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <LangVersion>preview</LangVersion>
+    <GeneratePackageOnBuild Condition=" '$(Configuration)' == 'Release' ">true</GeneratePackageOnBuild>
+    <PackageProjectUrl>https://github.com/dotnet9/AvaloniaExtensions</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/dotnet9/AvaloniaExtensions</RepositoryUrl>
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+</Project>
