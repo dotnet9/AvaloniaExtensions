@@ -21,7 +21,7 @@
         <TextBlock HorizontalAlignment="Center"
                    VerticalAlignment="Center">
             <Run Text="{i18n:I18n {Binding Title}}" />
-            <Run Text="{i18n:I18n {x:Static l:LanguageKeys.Welcome}}" />
+            <Run Text="{i18n:I18n {x:Static l:Language.Welcome}}" />
         </TextBlock>
         <StackPanel Orientation="Horizontal">
             <Button Content="English" Command="{Binding RaiseChangeLanguageHandler}" CommandParameter="en" />

@@ -6,54 +6,11 @@
 //     the code is regenerated.  
 // </auto-generated>  
 //------------------------------------------------------------------------------
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Globalization;
-using System.Linq;
-
 
 namespace AvaloniaExtensions.Axaml.Demo.I18n;
 
-public class Language : INotifyPropertyChanged
+public static class Language
 {
-    public Language()
-    {
-        _propertyNames = GetType().GetProperties().Select(p => p.Name);
-    }
-
-    public CultureInfo Culture
-    {
-        get => Resources.Culture;
-        set
-        {
-            Resources.Culture = value;
-            foreach (var name in _propertyNames)
-            {
-                OnPropertyChanged(name);
-            }
-        }
-    }
-
-    private readonly IEnumerable<string> _propertyNames;
-
-    public event PropertyChangedEventHandler? PropertyChanged;
-
-    private void OnPropertyChanged(string propertyName)
-    {
-        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-    }
-    
-    public static string? FindResource(string key)
-    {
-        return Resources.ResourceManager.GetString(key, Resources.Culture);
-    }
-
-    public static Language Instance
-    {
-        get;
-    } = new Language();
-		    public string AppName => Resources.AppName;
-		    public string Welcome => Resources.Welcome;
-	}
-
-
+	public static readonly string AppName = "AppName";
+	public static readonly string Welcome = "Welcome";
+}
