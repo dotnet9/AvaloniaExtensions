@@ -5,7 +5,7 @@ A syntactic sugar library that brings convenience to Avalonia UI development.
 ## Install
 
 ```bash
-Install-Package AvaloniaExtensions.Axaml -Version 0.0.1
+Install-Package AvaloniaExtensions.Axaml
 ```
 
 ## I18n
