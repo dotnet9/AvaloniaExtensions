@@ -6,10 +6,11 @@
         xmlns:markup="https://codewf.com"
         xmlns:l="clr-namespace:AvaloniaExtensions.Axaml.Demo.I18n"
         xmlns:models="clr-namespace:AvaloniaExtensions.Axaml.Demo.Models"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="300"
+        Width="600" Height="300" WindowStartupLocation="CenterOwner"
         x:Class="AvaloniaExtensions.Axaml.Demo.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
-        Icon="/Assets/avalonia-logo.ico"
+        Icon="/Assets/logo.ico"
         Title="{markup:I18n {Binding Title}}">
 
     <Design.DataContext>
@@ -17,28 +18,36 @@
              to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
         <vm:MainWindowViewModel />
     </Design.DataContext>
-    <TabControl>
-        <TabItem Header="I18n">
-            <StackPanel>
-                <StackPanel HorizontalAlignment="Center"
-                           VerticalAlignment="Center">
-                    <TextBlock Text="{markup:I18n {Binding Title}}" />
-                    <TextBlock Text="{markup:I18n {x:Static l:Language.Welcome}}" />
-                    <TextBlock Text="{markup:I18n {x:Static l:Language.RunningCountInfo},Win10}" />
-                </StackPanel>
-                <StackPanel Orientation="Horizontal">
-                    <Button Content="English" Command="{Binding RaiseChangeLanguageHandler}" CommandParameter="en" />
-                    <Button Content="中文简体" Command="{Binding RaiseChangeLanguageHandler}" CommandParameter="zh-CN" />
-                    <Button Content="中文繁體" Command="{Binding RaiseChangeLanguageHandler}" CommandParameter="zh-Hant" />
-                    <Button Content="日本語" Command="{Binding RaiseChangeLanguageHandler}" CommandParameter="ja-JP" />
-                </StackPanel>
-            </StackPanel>
-        </TabItem>
-        <TabItem Header="If">
-            <StackPanel>
-                <Button Content="Change" Command="{Binding RaiseChangeStatusCommandHandler}" />
-                <TextBlock Text="{markup:If {Binding Status}, 已运行, 未运行}" />
-                <!--
+    <Border Background="{StaticResource CloudDrawingBrush}" Classes="Shadow" Theme="{StaticResource CardBorder}">
+        <TabControl TabStripPlacement="Left">
+            <TabItem Header="I18n">
+                <Border Theme="{StaticResource CardBorder}">
+                    <StackPanel>
+                        <StackPanel HorizontalAlignment="Center"
+                                    VerticalAlignment="Center">
+                            <TextBlock Text="{markup:I18n {Binding Title}}" />
+                            <TextBlock Text="{markup:I18n {x:Static l:Language.Welcome}}" />
+                            <TextBlock Text="{markup:I18n {x:Static l:Language.RunningCountInfo},Win10}" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Button Content="English" Command="{Binding RaiseChangeLanguageHandler}"
+                                    CommandParameter="en" />
+                            <Button Content="中文简体" Command="{Binding RaiseChangeLanguageHandler}"
+                                    CommandParameter="zh-CN" />
+                            <Button Content="中文繁體" Command="{Binding RaiseChangeLanguageHandler}"
+                                    CommandParameter="zh-Hant" />
+                            <Button Content="日本語" Command="{Binding RaiseChangeLanguageHandler}"
+                                    CommandParameter="ja-JP" />
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+            </TabItem>
+            <TabItem Header="If">
+                <Border Theme="{StaticResource CardBorder}">
+                    <StackPanel>
+                        <Button Content="Change" Command="{Binding RaiseChangeStatusCommandHandler}" />
+                        <TextBlock Text="{markup:If {Binding Status}, 已运行, 未运行}" />
+                        <!--
                 <TextBlock Text="{markup:If {Binding Status}, {markup:I18n {x:Static l:Language.Welcome}}, {markup:I18n {x:Static l:Language.Welcome}}}" />
                 <markup:If Condition="{Binding Status}">
                     <markup:If.True>
@@ -49,8 +58,21 @@
                     </markup:If.False>
                 </markup:If>
                 -->
-            </StackPanel>
-        </TabItem>
-    </TabControl>
-
+                    </StackPanel>
+                </Border>
+            </TabItem>
+            <TabItem Header="Switch">
+                <Border Theme="{StaticResource CardBorder}">
+                    <StackPanel>
+                        <Button Content="Change" Command="{Binding RaiseChangeStatusCommandHandler}" />
+                        <!--
+                <TextBlock Text="{markup:Switch {Binding StatusKind},
+                           {markup:Case {x:Static models:RunStatusKind.Running}, 已运行},
+                           {markup:Case {x:Static models:RunStatusKind.NotRunning}, 未运行}}" />
+                           -->
+                    </StackPanel>
+                </Border>
+            </TabItem>
+        </TabControl>
+    </Border>
 </Window>

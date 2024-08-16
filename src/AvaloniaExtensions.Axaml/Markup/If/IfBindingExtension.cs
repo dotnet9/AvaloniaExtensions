@@ -7,11 +7,9 @@ namespace AvaloniaExtensions.Axaml.Markup;
 
 public class IfBindingExtension : MultiBindingExtensionBase
 {
-    public const int InvalidIndex = -1;
-
-    public int ConditionIndex = InvalidIndex;
-    public int TrueIndex = InvalidIndex;
-    public int FalseIndex = InvalidIndex;
+    public int ConditionIndex = Constants.InvalidIndex;
+    public int TrueIndex = Constants.InvalidIndex;
+    public int FalseIndex = Constants.InvalidIndex;
 
     public object? TrueContent;
     public object? FalseContent;
@@ -36,18 +34,14 @@ public class IfBindingExtension : MultiBindingExtensionBase
     public IfBindingExtension(object? condition, object? trueValue, object? falseValue)
         : this()
     {
-        if (condition is not BindingBase keyBinding)
-        {
-            keyBinding = new Binding { Source = condition };
-        }
-        Condition = keyBinding;
+        Condition = condition;
         True = trueValue;
         False = falseValue;
     }
 
     private void SetProperty<T>(T value, ref int index, out T? storage)
     {
-        if (index != InvalidIndex)
+        if (index != Constants.InvalidIndex)
             throw new InvalidOperationException("Cannot reset the value. ");
 
         if (value is BindingBase binding)

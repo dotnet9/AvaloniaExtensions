@@ -22,6 +22,6 @@ public class IfMultiValueConverter(IfBindingExtension ifExtension) : IMultiValue
             ? GetValue(ifExtension.TrueIndex, ifExtension.TrueContent)
             : GetValue(ifExtension.FalseIndex, ifExtension.FalseContent);
 
-        object? GetValue(int index, object? storage) => index != IfBindingExtension.InvalidIndex ? values[index] : storage;
+        object? GetValue(int index, object? storage) => index != Constants.InvalidIndex ? values[index] : storage;
     }
 }

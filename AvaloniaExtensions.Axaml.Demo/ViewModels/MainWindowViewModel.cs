@@ -1,4 +1,5 @@
 using System.Globalization;
+using AvaloniaExtensions.Axaml.Demo.Models;
 using AvaloniaExtensions.Axaml.Markup;
 using ReactiveUI;
 
@@ -16,6 +17,14 @@ public class MainWindowViewModel : ViewModelBase
         set => this.RaiseAndSetIfChanged(ref _status, value);
     }
 
+    private RunStatusKind _statusKind;
+
+    public RunStatusKind StatusKind
+    {
+        get => _statusKind;
+        set => this.RaiseAndSetIfChanged(ref _statusKind, value);
+    }
+
     public void RaiseChangeLanguageHandler(string language)
     {
         I18nManager.Instance.Culture = new CultureInfo(language);
@@ -24,5 +33,6 @@ public class MainWindowViewModel : ViewModelBase
     public void RaiseChangeStatusCommandHandler()
     {
         Status = !Status;
+        StatusKind = Status ? RunStatusKind.Running : RunStatusKind.NotRunning;
     }
 }

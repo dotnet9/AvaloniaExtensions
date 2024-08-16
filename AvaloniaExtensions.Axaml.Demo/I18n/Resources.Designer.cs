@@ -61,7 +61,7 @@ namespace AvaloniaExtensions.Axaml.Demo.I18n {
         }
         
         /// <summary>
-        ///   查找类似 Test I18n 的本地化字符串。
+        ///   查找类似 AvaloniaExtensions.Axaml.Demo 的本地化字符串。
         /// </summary>
         public static string AppName {
             get {
@@ -88,7 +88,7 @@ namespace AvaloniaExtensions.Axaml.Demo.I18n {
         }
         
         /// <summary>
-        ///   查找类似 Running {0} 的本地化字符串。
+        ///   查找类似 Running {0} operating system 的本地化字符串。
         /// </summary>
         public static string RunningCountInfo {
             get {

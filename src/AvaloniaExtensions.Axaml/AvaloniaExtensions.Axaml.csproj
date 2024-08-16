@@ -41,5 +41,23 @@
   <ItemGroup>
     <None Include="..\..\README.md" Pack="true" PackagePath="" />
     <None Include="..\..\logo.png" Pack="true" PackagePath="" />
+    <None Include="Markup\Switch\SwitchExtension.Ctors.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>SwitchExtension.Ctors.tt</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Markup\Switch\SwitchExtension.Ctors.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>SwitchExtension.Ctors.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Markup\Switch\SwitchExtension.Ctors.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>SwitchExtension.Ctors.cs</LastGenOutput>
+    </None>
   </ItemGroup>
 </Project>

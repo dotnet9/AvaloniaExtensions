@@ -2,14 +2,21 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              x:Class="AvaloniaExtensions.Axaml.Demo.App"
              xmlns:local="using:AvaloniaExtensions.Axaml.Demo"
-             RequestedThemeVariant="Default">
-             <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
+             xmlns:semi="https://irihi.tech/semi">
+    <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
 
     <Application.DataTemplates>
-        <local:ViewLocator/>
+        <local:ViewLocator />
     </Application.DataTemplates>
-  
+
     <Application.Styles>
-        <FluentTheme />
+        <semi:SemiTheme Locale="zh-CN" />
     </Application.Styles>
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <MergeResourceInclude Source="Styles/Brushes.axaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
 </Application>
