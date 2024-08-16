@@ -97,6 +97,14 @@ public static class Language
 I18nManager.Instance.Culture = new CultureInfo(language);
 ```
 
+## If
+
+在AXAML中使用条件表达式
+
+```axaml
+<TextBlock Text="{markup:If Condition={Binding Status}, True=已运行, False=未运行}" />
+```
+
 ## 感谢
 
 取之于开源，献之于开源。本库的开发受到了以下开源项目或文章的启发与帮助：

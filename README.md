@@ -97,6 +97,14 @@ public static class Language
 I18nManager.Instance.Culture = new CultureInfo(language);
 ```
 
+## If
+
+Using the Conditional expression in AXAML.
+
+```axaml
+<TextBlock Text="{markup:If Condition={Binding Status}, True=Running, False=NotRunning}" />
+```
+
 ## Thanks
 
 Taken from open source, contributed to open source. The development of this library was inspired and aided by the following open-source projects or articles:

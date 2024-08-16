@@ -9,7 +9,7 @@ using AvaloniaExtensions.Axaml.Converters;
 
 namespace AvaloniaExtensions.Axaml.Markup;
 
-public class I18nStringExtension : MultiBinding
+public class I18nStringExtension : MultiBindingExtensionBase
 {
     public I18nStringExtension(object key)
     {
