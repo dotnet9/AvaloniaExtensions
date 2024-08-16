@@ -70,6 +70,33 @@ namespace AvaloniaExtensions.Axaml.Demo.I18n {
         }
         
         /// <summary>
+        ///   查找类似 Not running 的本地化字符串。
+        /// </summary>
+        public static string NotRunning {
+            get {
+                return ResourceManager.GetString("NotRunning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Running 的本地化字符串。
+        /// </summary>
+        public static string Running {
+            get {
+                return ResourceManager.GetString("Running", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Running {0} 的本地化字符串。
+        /// </summary>
+        public static string RunningCountInfo {
+            get {
+                return ResourceManager.GetString("RunningCountInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Welcome to use I18n 的本地化字符串。
         /// </summary>
         public static string Welcome {

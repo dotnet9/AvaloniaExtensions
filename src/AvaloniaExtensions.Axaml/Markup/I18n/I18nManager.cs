@@ -6,9 +6,9 @@ using System.Globalization;
 using System.Linq;
 using System.Reflection;
 using System.Resources;
-using System.Text;
 using System.Threading;
 
+// ReSharper disable once CheckNamespace
 namespace AvaloniaExtensions.Axaml.Markup;
 
 public class I18nManager : INotifyPropertyChanged
@@ -49,7 +49,7 @@ public class I18nManager : INotifyPropertyChanged
             _culture = value;
             Thread.CurrentThread.CurrentCulture = value;
             Thread.CurrentThread.CurrentUICulture = value;
-            this.Sync();
+            Sync();
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Culture)));
             CultureChanged?.Invoke(this, EventArgs.Empty);
         }
@@ -80,13 +80,13 @@ public class I18nManager : INotifyPropertyChanged
             }
         }
 
-        this.Resources.Clear();
+        Resources.Clear();
         foreach (var pair in _resourceManagers)
         {
             pair.Key.GetProperty("Culture", BindingFlags.Public | BindingFlags.Static)?.SetValue(null, _culture);
             foreach (var entry in GetResources(pair.Value))
             {
-                this.Resources[entry.Key.ToString()] = entry.Value;
+                Resources[entry.Key.ToString()] = entry.Value;
             }
         }
     }

@@ -13,4 +13,7 @@ public static class Language
 {
 	public static readonly string AppName = "AppName";
 	public static readonly string Welcome = "Welcome";
+	public static readonly string Running = "Running";
+	public static readonly string NotRunning = "NotRunning";
+	public static readonly string RunningCountInfo = "RunningCountInfo";
 }

@@ -20,11 +20,12 @@
     <TabControl>
         <TabItem Header="I18n">
             <StackPanel>
-                <TextBlock HorizontalAlignment="Center"
+                <StackPanel HorizontalAlignment="Center"
                            VerticalAlignment="Center">
-                    <Run Text="{markup:I18n {Binding Title}}" />
-                    <Run Text="{markup:I18n {x:Static l:Language.Welcome}}" />
-                </TextBlock>
+                    <TextBlock Text="{markup:I18n {Binding Title}}" />
+                    <TextBlock Text="{markup:I18n {x:Static l:Language.Welcome}}" />
+                    <TextBlock Text="{markup:I18n {x:Static l:Language.RunningCountInfo},Win10}" />
+                </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <Button Content="English" Command="{Binding RaiseChangeLanguageHandler}" CommandParameter="en" />
                     <Button Content="中文简体" Command="{Binding RaiseChangeLanguageHandler}" CommandParameter="zh-CN" />
@@ -37,6 +38,8 @@
             <StackPanel>
                 <Button Content="Change" Command="{Binding RaiseChangeStatusCommandHandler}" />
                 <TextBlock Text="{markup:If Condition={Binding Status}, True=已运行, False=未运行}" />
+                <TextBlock Text="{markup:If {Binding Status}, 已运行, 未运行}" />
+                <TextBlock Text="{markup:If {Binding Status}, {markup:I18n {x:Static l:Language.Welcome}}, {markup:I18n {x:Static l:Language.Welcome}}}" />
             </StackPanel>
         </TabItem>
     </TabControl>

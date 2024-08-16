@@ -123,4 +123,13 @@
   <data name="Welcome" xml:space="preserve">
     <value>欢迎使用I18n</value>
   </data>
+  <data name="Running" xml:space="preserve">
+    <value>正在运行</value>
+  </data>
+  <data name="NotRunning" xml:space="preserve">
+    <value>未运行</value>
+  </data>
+  <data name="RunningCountInfo" xml:space="preserve">
+    <value>正在运行 {0}</value>
+  </data>
 </root>

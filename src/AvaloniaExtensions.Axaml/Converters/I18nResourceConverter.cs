@@ -7,7 +7,7 @@ using AvaloniaExtensions.Axaml.Markup;
 
 namespace AvaloniaExtensions.Axaml.Converters;
 
-public class I18nResourceConverter(I18nStringExtension owner) : IMultiValueConverter
+public class I18nResourceConverter(I18nBindingExtension owner) : IMultiValueConverter
 {
     public object? Convert(IList<object?> values, Type targetType, object? parameter, CultureInfo culture)
     {

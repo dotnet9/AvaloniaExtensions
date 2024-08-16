@@ -7,17 +7,8 @@ using Avalonia.Data.Converters;
 using Avalonia.Markup.Xaml;
 using AvaloniaExtensions.Axaml.ExtensionMethods;
 
+// ReSharper disable once CheckNamespace
 namespace AvaloniaExtensions.Axaml.Markup;
-
-public class IfExtension : MarkupExtension
-{
-    public object? Condition { get; set; }
-    public object? True { get; set; }
-    public object? False { get; set; }
-
-    public override object ProvideValue(IServiceProvider serviceProvider) =>
-        new IfBindingExtension(Condition, True, False);
-}
 
 public class IfBindingExtension : MultiBindingExtensionBase
 {
@@ -62,7 +53,7 @@ public class IfBindingExtension : MultiBindingExtensionBase
         False = falseValue;
     }
 
-    private void SetProperty<T>(T value, ref int index, out T storage)
+    private void SetProperty<T>(T value, ref int index, out T? storage)
     {
         if (index != InvalidIndex)
             throw new InvalidOperationException("Cannot reset the value. ");
@@ -92,12 +83,7 @@ public class IfBindingExtension : MultiBindingExtensionBase
                 ? GetValue(ifExtension._trueIndex, ifExtension._true)
                 : GetValue(ifExtension._falseIndex, ifExtension._false);
 
-            object GetValue(int index, object storage) => index != InvalidIndex ? values[index] : storage;
-        }
-
-        public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
-        {
-            throw new NotSupportedException();
+            object? GetValue(int index, object? storage) => index != InvalidIndex ? values[index] : storage;
         }
     }
 }

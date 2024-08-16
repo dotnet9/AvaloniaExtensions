@@ -123,4 +123,13 @@
   <data name="Welcome" xml:space="preserve">
     <value>I 18 nへようこそ</value>
   </data>
+  <data name="Running" xml:space="preserve">
+    <value>実行中</value>
+  </data>
+  <data name="NotRunning" xml:space="preserve">
+    <value>未実行</value>
+  </data>
+  <data name="RunningCountInfo" xml:space="preserve">
+    <value>実行中 {0}</value>
+  </data>
 </root>

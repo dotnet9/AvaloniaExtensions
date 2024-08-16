@@ -104,4 +104,13 @@
   <data name="Welcome" xml:space="preserve">
     <value>Welcome to use I18n</value>
   </data>
+  <data name="Running" xml:space="preserve">
+    <value>Running</value>
+  </data>
+  <data name="NotRunning" xml:space="preserve">
+    <value>Not running</value>
+  </data>
+  <data name="RunningCountInfo" xml:space="preserve">
+    <value>Running {0}</value>
+  </data>
 </root>
