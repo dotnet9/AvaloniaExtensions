@@ -83,6 +83,7 @@ public static class Language
 ```axaml
 
 <TextBlock Text="{i18n:I18n {x:Static l:LanguageKeys.Welcome}}" />
+<TextBlock Text="{markup:I18n {x:Static l:Language.RunningCountInfo},Win10}" />
 ```
 
 - 动态绑定资源键：

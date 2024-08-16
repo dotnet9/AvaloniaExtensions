@@ -81,8 +81,8 @@ public static class Language
 - Static binding of resource keys:
 
 ```axaml
-
 <TextBlock Text="{i18n:I18n {x:Static l:LanguageKeys.Welcome}}" />
+<TextBlock Text="{markup:I18n {x:Static l:Language.RunningCountInfo},Win10}" />
 ```
 
 - Dynamic binding of resource keys:

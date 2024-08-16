@@ -41,6 +41,7 @@ public class I18nBindingExtension : MultiBindingExtensionBase
     }
 
     public object Key { get; }
+
     public ArgCollection Args { get; }
 
     public IValueConverter KeyConverter { get; set; }

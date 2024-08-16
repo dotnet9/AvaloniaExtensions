@@ -5,6 +5,7 @@ using System.Linq;
 using Avalonia.Data.Converters;
 using AvaloniaExtensions.Axaml.Markup;
 
+// ReSharper disable once CheckNamespace
 namespace AvaloniaExtensions.Axaml.Converters;
 
 public class I18nResourceConverter(I18nBindingExtension owner) : IMultiValueConverter

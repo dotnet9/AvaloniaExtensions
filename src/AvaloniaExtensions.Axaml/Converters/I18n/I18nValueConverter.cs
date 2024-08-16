@@ -2,9 +2,10 @@ using System;
 using System.Globalization;
 using Avalonia.Data.Converters;
 
+// ReSharper disable once CheckNamespace
 namespace AvaloniaExtensions.Axaml.Converters;
 
-public class I18nKeyConverter : IValueConverter
+public class I18nValueConverter : IValueConverter
 {
     public object? Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
     {
@@ -16,13 +17,12 @@ public class I18nKeyConverter : IValueConverter
         throw new NotSupportedException();
     }
 
-    public static string? Get(object? value)
+    public static object? Get(object? value, bool trimEnd = false)
     {
         return value switch
         {
-            Enum v => $"{value.GetType().Name}_{v}",
-            string key => key,
-            _ => string.Empty
+            string @string => trimEnd ? @string.TrimEnd() : @string,
+            _ => value
         };
     }
 }

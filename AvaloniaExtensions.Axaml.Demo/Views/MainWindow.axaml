@@ -37,9 +37,18 @@
         <TabItem Header="If">
             <StackPanel>
                 <Button Content="Change" Command="{Binding RaiseChangeStatusCommandHandler}" />
-                <TextBlock Text="{markup:If Condition={Binding Status}, True=已运行, False=未运行}" />
                 <TextBlock Text="{markup:If {Binding Status}, 已运行, 未运行}" />
+                <!--
                 <TextBlock Text="{markup:If {Binding Status}, {markup:I18n {x:Static l:Language.Welcome}}, {markup:I18n {x:Static l:Language.Welcome}}}" />
+                <markup:If Condition="{Binding Status}">
+                    <markup:If.True>
+                        <TextBlock Text="{markup:I18n {x:Static l:Language.Running}}" />
+                    </markup:If.True>
+                    <markup:If.False>
+                        <TextBlock Text="{markup:I18n {x:Static l:Language.NotRunning}}" />
+                    </markup:If.False>
+                </markup:If>
+                -->
             </StackPanel>
         </TabItem>
     </TabControl>
