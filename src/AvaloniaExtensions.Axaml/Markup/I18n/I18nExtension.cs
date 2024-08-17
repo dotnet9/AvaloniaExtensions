@@ -19,5 +19,5 @@ public class I18nExtension : MarkupExtension
 
     public object Key { get; }
     public object[]? Args { get; }
-    public override object ProvideValue(IServiceProvider serviceProvider) => new I18nBindingExtension(Key, Args);
+    public override object ProvideValue(IServiceProvider serviceProvider) => new I18nBinding(Key, Args);
 }

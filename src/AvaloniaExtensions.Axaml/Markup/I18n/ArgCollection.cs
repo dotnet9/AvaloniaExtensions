@@ -5,7 +5,7 @@ using Avalonia.Data;
 // ReSharper disable once CheckNamespace
 namespace AvaloniaExtensions.Axaml.Markup;
 
-public class ArgCollection(I18nBindingExtension owner) : Collection<object>
+public class ArgCollection(I18nBinding owner) : Collection<object>
 {
     internal List<(bool IsBinding, int Index)> Indexes { get; } = [];
 

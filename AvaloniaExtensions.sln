@@ -19,7 +19,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvaloniaExtensions.Axaml", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{07FEB8AC-F72D-469E-8AE6-A5518919D2FD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvaloniaExtensions.Axaml.Demo", "AvaloniaExtensions.Axaml.Demo\AvaloniaExtensions.Axaml.Demo.csproj", "{9354640E-E0A0-43DD-9CFC-FDDF624305DA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvaloniaExtensions.Axaml.Demo", "src\AvaloniaExtensions.Axaml.Demo\AvaloniaExtensions.Axaml.Demo.csproj", "{9354640E-E0A0-43DD-9CFC-FDDF624305DA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

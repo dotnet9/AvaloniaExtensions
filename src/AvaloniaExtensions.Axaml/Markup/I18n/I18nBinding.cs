@@ -5,12 +5,12 @@ using AvaloniaExtensions.Axaml.Converters;
 // ReSharper disable once CheckNamespace
 namespace AvaloniaExtensions.Axaml.Markup;
 
-public class I18nBindingExtension : MultiBindingExtensionBase
+public class I18nBinding : MultiBindingExtensionBase
 {
-    public I18nBindingExtension(object key)
+    public I18nBinding(object key)
     {
         Mode = BindingMode.OneWay;
-        Converter = new I18nResourceConverter(this);
+        Converter = new I18nConverter(this);
         KeyConverter = new I18nKeyConverter();
         ValueConverter = new I18nValueConverter();
         Args = new ArgCollection(this);
@@ -27,7 +27,7 @@ public class I18nBindingExtension : MultiBindingExtensionBase
         Bindings.Add(keyBinding);
     }
 
-    public I18nBindingExtension(object key, params object[]? args) : this(key)
+    public I18nBinding(object key, params object[]? args) : this(key)
     {
         if (args is not { Length: > 0 })
         {

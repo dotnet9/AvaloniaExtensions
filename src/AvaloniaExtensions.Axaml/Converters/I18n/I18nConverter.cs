@@ -8,7 +8,7 @@ using AvaloniaExtensions.Axaml.Markup;
 // ReSharper disable once CheckNamespace
 namespace AvaloniaExtensions.Axaml.Converters;
 
-public class I18nResourceConverter(I18nBindingExtension owner) : IMultiValueConverter
+public class I18nConverter(I18nBinding owner) : IMultiValueConverter
 {
     public object? Convert(IList<object?> values, Type targetType, object? parameter, CultureInfo culture)
     {

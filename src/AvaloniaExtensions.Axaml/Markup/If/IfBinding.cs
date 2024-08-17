@@ -5,7 +5,7 @@ using AvaloniaExtensions.Axaml.Converters;
 // ReSharper disable once CheckNamespace
 namespace AvaloniaExtensions.Axaml.Markup;
 
-public class IfBindingExtension : MultiBindingExtensionBase
+public class IfBinding : MultiBindingExtensionBase
 {
     public int ConditionIndex = Constants.InvalidIndex;
     public int TrueIndex = Constants.InvalidIndex;
@@ -29,9 +29,9 @@ public class IfBindingExtension : MultiBindingExtensionBase
         set => SetProperty(value, ref FalseIndex, out FalseContent);
     }
 
-    public IfBindingExtension() => Converter = new IfMultiValueConverter(this);
+    public IfBinding() => Converter = new IfConverter(this);
 
-    public IfBindingExtension(object? condition, object? trueValue, object? falseValue)
+    public IfBinding(object? condition, object? trueValue, object? falseValue)
         : this()
     {
         Condition = condition;

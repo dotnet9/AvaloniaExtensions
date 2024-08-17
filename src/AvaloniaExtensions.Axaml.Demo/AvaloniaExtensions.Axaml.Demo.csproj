@@ -23,7 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\src\AvaloniaExtensions.Axaml\AvaloniaExtensions.Axaml.csproj" />
+    <ProjectReference Include="..\AvaloniaExtensions.Axaml\AvaloniaExtensions.Axaml.csproj" />
   </ItemGroup>
 
   <ItemGroup>
