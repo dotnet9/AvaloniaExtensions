@@ -104,6 +104,7 @@ I18nManager.Instance.Culture = new CultureInfo(language);
 
 ```axaml
 <TextBlock Text="{markup:If Condition={Binding Status}, True=已运行, False=未运行}" />
+<TextBlock Text="{markup:If {Binding Status}, {markup:I18n {x:Static l:Language.Running}}, {markup:I18n {x:Static l:Language.NotRunning}}}" />
 ```
 
 ## 感谢

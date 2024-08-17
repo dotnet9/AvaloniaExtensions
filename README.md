@@ -103,6 +103,7 @@ Using the Conditional expression in AXAML.
 
 ```axaml
 <TextBlock Text="{markup:If Condition={Binding Status}, True=Running, False=NotRunning}" />
+<TextBlock Text="{markup:If {Binding Status}, {markup:I18n {x:Static l:Language.Running}}, {markup:I18n {x:Static l:Language.NotRunning}}}" />
 ```
 
 ## Thanks
