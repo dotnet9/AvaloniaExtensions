@@ -5,16 +5,16 @@ using AvaloniaExtensions.Axaml.Converters.Switch;
 // ReSharper disable once CheckNamespace
 namespace AvaloniaExtensions.Axaml.Markup;
 
-public class SwitchBindingExtension : MultiBindingExtensionBase
+public class SwitchBinding : MultiBindingExtensionBase
 {
-    public SwitchBindingExtension()
+    public SwitchBinding()
     {
         Mode = BindingMode.OneWay;
-        Converter = new SwitchMultiValueConverter(this);
+        Converter = new SwitchConverter(this);
         Cases = new(this);
     }
 
-    public SwitchBindingExtension(object to, CaseCollection cases) : this()
+    public SwitchBinding(object to, CaseCollection cases) : this()
     {
         To = to;
         Cases = cases;

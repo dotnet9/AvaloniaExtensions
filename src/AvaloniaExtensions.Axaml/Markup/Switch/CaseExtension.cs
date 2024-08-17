@@ -8,9 +8,9 @@ public class CaseExtension : MarkupExtension
 {
     internal int Index { get; set; } = Constants.InvalidIndex;
 
-    [ConstructorArgument(nameof(Label))] public object Label { get; set; } = Constants.DefaultLabel;
+    public object Label { get; set; } = Constants.DefaultLabel;
 
-    [ConstructorArgument(nameof(Value))] public object Value { get; set; }
+    public object? Value { get; set; }
 
     public CaseExtension()
     {

@@ -9,11 +9,11 @@ using AvaloniaExtensions.Axaml.Markup;
 
 namespace AvaloniaExtensions.Axaml.Converters.Switch;
 
-internal class SwitchMultiValueConverter : IMultiValueConverter
+internal class SwitchConverter : IMultiValueConverter
 {
-    private readonly SwitchBindingExtension _switchExtension;
+    private readonly SwitchBinding _switchExtension;
 
-    public SwitchMultiValueConverter(SwitchBindingExtension switchExtension) => _switchExtension = switchExtension;
+    public SwitchConverter(SwitchBinding switchExtension) => _switchExtension = switchExtension;
 
     public object? Convert(IList<object?> values, Type targetType, object? parameter, CultureInfo culture)
     {
@@ -27,10 +27,5 @@ internal class SwitchMultiValueConverter : IMultiValueConverter
 
         var index = @case.Index;
         return index == Constants.InvalidIndex ? @case.Value : values[index];
-    }
-
-    public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
-    {
-        throw new NotSupportedException();
     }
 }

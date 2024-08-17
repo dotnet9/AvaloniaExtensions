@@ -8,9 +8,9 @@ namespace AvaloniaExtensions.Axaml.Markup;
 
 public class CaseCollection : Collection<CaseExtension>
 {
-    private readonly SwitchBindingExtension _switchExtension;
+    private readonly SwitchBinding _switchExtension;
 
-    public CaseCollection(SwitchBindingExtension switchExtension) => _switchExtension = switchExtension;
+    public CaseCollection(SwitchBinding switchExtension) => _switchExtension = switchExtension;
 
     protected override void InsertItem(int index, CaseExtension item)
     {
