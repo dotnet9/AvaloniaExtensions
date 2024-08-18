@@ -1,3 +1,4 @@
+using System;
 using System.Globalization;
 using AvaloniaExtensions.Axaml.Demo.Models;
 using AvaloniaExtensions.Axaml.Markup;
@@ -17,6 +18,14 @@ public class MainWindowViewModel : ViewModelBase
         set => this.RaiseAndSetIfChanged(ref _status, value);
     }
 
+    private AlarmStatus _alarmStatus;
+
+    public AlarmStatus AlarmStatus
+    {
+        get => _alarmStatus;
+        set => this.RaiseAndSetIfChanged(ref _alarmStatus, value);
+    }
+
     private RunStatusKind _statusKind;
 
     public RunStatusKind StatusKind
@@ -34,5 +43,7 @@ public class MainWindowViewModel : ViewModelBase
     {
         Status = !Status;
         StatusKind = Status ? RunStatusKind.Running : RunStatusKind.NotRunning;
+        AlarmStatus = (AlarmStatus)Enum.Parse(typeof(AlarmStatus),
+            Random.Shared.Next(Enum.GetNames(typeof(AlarmStatus)).Length).ToString());
     }
 }

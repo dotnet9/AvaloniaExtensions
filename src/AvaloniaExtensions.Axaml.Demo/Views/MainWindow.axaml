@@ -5,7 +5,6 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:markup="https://codewf.com"
         xmlns:l="clr-namespace:AvaloniaExtensions.Axaml.Demo.I18n"
-        xmlns:models="clr-namespace:AvaloniaExtensions.Axaml.Demo.Models"
         mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="300"
         Width="600" Height="300" WindowStartupLocation="CenterOwner"
         x:Class="AvaloniaExtensions.Axaml.Demo.Views.MainWindow"
@@ -27,6 +26,19 @@
                 <TextBlock Foreground="DarkOrange" Text="{markup:I18n {x:Static l:Language.NotRunning}}" />
             </markup:IfConditionConverter.False>
         </markup:IfConditionConverter>
+
+        <DataTemplate x:Key="NormalTemplate">
+            <TextBlock Text="正常" Foreground="Green" />
+        </DataTemplate>
+        <DataTemplate x:Key="OverLimitTemplate">
+            <TextBlock Text="超限" Foreground="DarkOrange" />
+        </DataTemplate>
+        <DataTemplate x:Key="OvertimeTemplate">
+            <TextBlock Text="超时" Foreground="Red" />
+        </DataTemplate>
+        <DataTemplate x:Key="UserChangedTemplate">
+            <TextBlock Text="锁定" Foreground="Red" />
+        </DataTemplate>
     </Window.Resources>
     <Border Background="{StaticResource CloudDrawingBrush}" Classes="Shadow" Theme="{StaticResource CardBorder}">
         <TabControl TabStripPlacement="Left">
@@ -67,11 +79,22 @@
                 <Border Theme="{StaticResource CardBorder}">
                     <StackPanel>
                         <Button Content="Change" Command="{Binding RaiseChangeStatusCommandHandler}" />
-                        <!--
-                <TextBlock Text="{markup:Switch {Binding StatusKind},
-                           {markup:Case {x:Static models:RunStatusKind.Running}, 已运行},
-                           {markup:Case {x:Static models:RunStatusKind.NotRunning}, 未运行}}" />
-                           -->
+                        <ContentControl Content="{Binding AlarmStatus}">
+                            <ContentControl.Styles>
+                                <Style Selector="ContentControl[Content=Normal]">
+                                    <Setter Property="ContentTemplate" Value="{StaticResource NormalTemplate}" />
+                                </Style>
+                                <Style Selector="ContentControl[Content=OverLimit]">
+                                    <Setter Property="ContentTemplate" Value="{StaticResource OverLimitTemplate}" />
+                                </Style>
+                                <Style Selector="ContentControl[Content=Overtime]">
+                                    <Setter Property="ContentTemplate" Value="{StaticResource OvertimeTemplate}" />
+                                </Style>
+                                <Style Selector="ContentControl[Content=UserChanged]">
+                                    <Setter Property="ContentTemplate" Value="{StaticResource UserChangedTemplate}" />
+                                </Style>
+                            </ContentControl.Styles>
+                        </ContentControl>
                     </StackPanel>
                 </Border>
             </TabItem>

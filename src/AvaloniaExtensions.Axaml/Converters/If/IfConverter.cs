@@ -12,7 +12,9 @@ public class IfConverter(IfBinding ifExtension) : IMultiValueConverter
 {
     public object? Convert(IList<object?> values, Type targetType, object? parameter, CultureInfo culture)
     {
-        return values.Count <= 0 ? BindingOperations.DoNothing : GetValue(values[0] is true ? ifExtension.TrueContent : ifExtension.FalseContent);
+        return values.Count <= 0
+            ? BindingOperations.DoNothing
+            : GetValue(values[0] is true ? ifExtension.TrueContent : ifExtension.FalseContent);
 
         object? GetValue(object? value)
         {
