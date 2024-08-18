@@ -23,6 +23,5 @@ public class IfExtension : MarkupExtension
 
     public object? False { get; set; }
 
-    public override object ProvideValue(IServiceProvider serviceProvider) =>
-        new IfBinding(Condition, True, False);
+    public override object ProvideValue(IServiceProvider serviceProvider) => new IfBinding(Condition, True, False);
 }

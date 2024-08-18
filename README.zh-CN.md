@@ -107,6 +107,25 @@ I18nManager.Instance.Culture = new CultureInfo(language);
 <TextBlock Text="{markup:If {Binding Status}, {markup:I18n {x:Static l:Language.Running}}, {markup:I18n {x:Static l:Language.NotRunning}}}" />
 ```
 
+## 扩展转换器
+
+### IfConditionConverter
+
+```axaml
+<markup:IfConditionConverter x:Key="StatusConditionConverter">
+            <markup:IfConditionConverter.True>
+                <TextBlock Foreground="Green" Text="{markup:I18n {x:Static l:Language.Running}}" />
+            </markup:IfConditionConverter.True>
+            <markup:IfConditionConverter.False>
+                <TextBlock Foreground="DarkOrange" Text="{markup:I18n {x:Static l:Language.NotRunning}}" />
+            </markup:IfConditionConverter.False>
+        </markup:IfConditionConverter>
+```
+
+```axaml
+<ContentControl Content="{Binding Status, Converter={StaticResource StatusConditionConverter}}" />
+```
+
 ## 感谢
 
 取之于开源，献之于开源。本库的开发受到了以下开源项目或文章的启发与帮助：

@@ -7,7 +7,8 @@ using Avalonia.Data;
 using Avalonia.Data.Converters;
 using AvaloniaExtensions.Axaml.Markup;
 
-namespace AvaloniaExtensions.Axaml.Converters.Switch;
+// ReSharper disable once CheckNamespace
+namespace AvaloniaExtensions.Axaml.Converters;
 
 internal class SwitchConverter : IMultiValueConverter
 {

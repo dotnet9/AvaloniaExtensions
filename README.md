@@ -106,6 +106,25 @@ Using the Conditional expression in AXAML.
 <TextBlock Text="{markup:If {Binding Status}, {markup:I18n {x:Static l:Language.Running}}, {markup:I18n {x:Static l:Language.NotRunning}}}" />
 ```
 
+## Converter Extensions
+
+### IfConditionConverter
+
+```axaml
+<markup:IfConditionConverter x:Key="StatusConditionConverter">
+            <markup:IfConditionConverter.True>
+                <TextBlock Foreground="Green" Text="{markup:I18n {x:Static l:Language.Running}}" />
+            </markup:IfConditionConverter.True>
+            <markup:IfConditionConverter.False>
+                <TextBlock Foreground="DarkOrange" Text="{markup:I18n {x:Static l:Language.NotRunning}}" />
+            </markup:IfConditionConverter.False>
+        </markup:IfConditionConverter>
+```
+
+```axaml
+<ContentControl Content="{Binding Status, Converter={StaticResource StatusConditionConverter}}" />
+```
+
 ## Thanks
 
 Taken from open source, contributed to open source. The development of this library was inspired and aided by the following open-source projects or articles:

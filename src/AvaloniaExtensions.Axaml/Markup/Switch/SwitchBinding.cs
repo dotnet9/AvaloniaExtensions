@@ -1,6 +1,6 @@
 using System;
 using Avalonia.Data;
-using AvaloniaExtensions.Axaml.Converters.Switch;
+using AvaloniaExtensions.Axaml.Converters;
 
 // ReSharper disable once CheckNamespace
 namespace AvaloniaExtensions.Axaml.Markup;
