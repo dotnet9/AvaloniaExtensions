@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:markup="https://codewf.com"
         xmlns:l="clr-namespace:AvaloniaExtensions.Axaml.Demo.I18n"
+        xmlns:models="clr-namespace:AvaloniaExtensions.Axaml.Demo.Models"
         mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="300"
         Width="600" Height="300" WindowStartupLocation="CenterOwner"
         x:Class="AvaloniaExtensions.Axaml.Demo.Views.MainWindow"
@@ -18,6 +19,7 @@
         <vm:MainWindowViewModel />
     </Design.DataContext>
     <Window.Resources>
+        <markup:EnumToBooleanConverter x:Key="EnumToBooleanConverter"></markup:EnumToBooleanConverter>
         <markup:IfConditionConverter x:Key="StatusConditionConverter">
             <markup:IfConditionConverter.True>
                 <TextBlock Foreground="Green" Text="{markup:I18n {x:Static l:Language.Running}}" />
@@ -71,6 +73,7 @@
                         <TextBlock Text="{markup:If {Binding Status}, 已运行, 未运行}" />
                         <TextBlock
                             Text="{markup:If {Binding Status}, {markup:I18n {x:Static l:Language.Running}}, {markup:I18n {x:Static l:Language.NotRunning}}}" />
+
                         <ContentControl Content="{Binding Status, Converter={StaticResource StatusConditionConverter}}" />
                     </StackPanel>
                 </Border>
@@ -79,6 +82,16 @@
                 <Border Theme="{StaticResource CardBorder}">
                     <StackPanel>
                         <Button Content="Change" Command="{Binding RaiseChangeStatusCommandHandler}" />
+                        <StackPanel Orientation="Horizontal">
+                            <RadioButton Content="Normal"
+                                         IsChecked="{Binding AlarmStatus, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter={x:Static models:AlarmStatus.Normal}}" />
+                            <RadioButton Content="OverLimit"
+                                         IsChecked="{Binding AlarmStatus, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter={x:Static models:AlarmStatus.OverLimit}}" />
+                            <RadioButton Content="Overtime"
+                                         IsChecked="{Binding AlarmStatus, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter={x:Static models:AlarmStatus.Overtime}}" />
+                            <RadioButton Content="UserChanged"
+                                         IsChecked="{Binding AlarmStatus, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter={x:Static models:AlarmStatus.UserChanged}}" />
+                        </StackPanel>
                         <ContentControl Content="{Binding AlarmStatus}">
                             <ContentControl.Styles>
                                 <Style Selector="ContentControl[Content=Normal]">
