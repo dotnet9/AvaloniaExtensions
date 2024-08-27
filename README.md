@@ -4,7 +4,7 @@ English | [简体中文](README.zh-CN.md)
 
 A syntactic sugar library that brings convenience to Avalonia UI development, aiming to enhance development efficiency and experience by providing additional functionality and simplifying common operations.
 
-## 安装
+## Install
 
 ```bash
 Install-Package AvaloniaExtensions.Axaml
