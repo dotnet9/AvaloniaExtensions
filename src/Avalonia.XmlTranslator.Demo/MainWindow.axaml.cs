@@ -1,3 +1,4 @@
+using System.Xml.Linq;
 using Avalonia.Controls;
 
 namespace Avalonia.XmlTranslator.Demo
@@ -6,7 +7,7 @@ namespace Avalonia.XmlTranslator.Demo
     {
         public MainWindow()
         {
-            InitializeComponent();
+            InitializeComponent(); 
         }
     }
 }

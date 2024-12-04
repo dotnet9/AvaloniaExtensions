@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Localization language="Chinese (Simplified)" description="Chinese (Simplified)" clutureName="zh-CN">
+  <Main>
+    <MainView>
+      <Title>使用XML实现国际化</Title>
+      <Exit>退出程序</Exit>
+    </MainView>
+    <SettingView>
+      <Title>设置</Title>
+      <NoPrompt>不再提示</NoPrompt>
+    </SettingView>
+  </Main>
+  <DevelopModule>
+    <Title2SlugView>
+      <Title>文章标题转URL别名</Title>
+      <Convert>转换</Convert>
+    </Title2SlugView>
+    <SettingView>
+      <Title>设置</Title>
+      <MaxLength>最大长度</MaxLength>
+    </SettingView>
+  </DevelopModule>
+</Localization>

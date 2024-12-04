@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Localization language="Japanese" description="Japanese" cultureName="ja-JP">
+  <Main>
+    <MainView>
+      <Title>XMLを使って国際化を実現する</Title>
+      <Exit>プログラムを終了する</Exit>
+    </MainView>
+    <SettingView>
+      <Title>設定</Title>
+      <NoPrompt>もうメッセージを表示しない</NoPrompt>
+    </SettingView>
+  </Main>
+  <DevelopModule>
+    <Title2SlugView>
+      <Title>記事のタイトルをURLのエイリアスに変換する</Title>
+      <Convert>変換する</Convert>
+    </Title2SlugView>
+    <SettingView>
+      <Title>設定</Title>
+      <MaxLength>最大長さ</MaxLength>
+    </SettingView>
+  </DevelopModule>
+</Localization>
