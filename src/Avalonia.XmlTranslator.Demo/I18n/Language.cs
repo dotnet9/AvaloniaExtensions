@@ -9,31 +9,32 @@ namespace Localization.Main
 {
     public static class MainView
     {
-        public static readonly string Title = nameof(Title);
-        public static readonly string Exit = nameof(Exit);
+        public static readonly string Title = "Localization.Main.MainView.Title";
+        public static readonly string ChangeLanguage = "Localization.Main.MainView.ChangeLanguage";
+        public static readonly string Exit = "Localization.Main.MainView.Exit";
     }
 }
 namespace Localization.Main
 {
     public static class SettingView
     {
-        public static readonly string Title = nameof(Title);
-        public static readonly string NoPrompt = nameof(NoPrompt);
+        public static readonly string Title = "Localization.Main.SettingView.Title";
+        public static readonly string NoPrompt = "Localization.Main.SettingView.NoPrompt";
     }
 }
 namespace Localization.DevelopModule
 {
     public static class Title2SlugView
     {
-        public static readonly string Title = nameof(Title);
-        public static readonly string Convert = nameof(Convert);
+        public static readonly string Title = "Localization.DevelopModule.Title2SlugView.Title";
+        public static readonly string Convert = "Localization.DevelopModule.Title2SlugView.Convert";
     }
 }
 namespace Localization.DevelopModule
 {
     public static class SettingView
     {
-        public static readonly string Title = nameof(Title);
-        public static readonly string MaxLength = nameof(MaxLength);
+        public static readonly string Title = "Localization.DevelopModule.SettingView.Title";
+        public static readonly string MaxLength = "Localization.DevelopModule.SettingView.MaxLength";
     }
 }

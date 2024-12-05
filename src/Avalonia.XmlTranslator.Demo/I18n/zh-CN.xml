@@ -1,9 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
-<Localization language="Chinese (Simplified)" description="Chinese (Simplified)" clutureName="zh-CN">
+<Localization language="Chinese (Simplified)" description="Chinese (Simplified)" cultureName="zh-CN">
   <Main>
     <MainView>
       <Title>使用XML实现国际化</Title>
+      <ChangeLanguage>切换语言</ChangeLanguage>
       <Exit>退出程序</Exit>
     </MainView>
     <SettingView>

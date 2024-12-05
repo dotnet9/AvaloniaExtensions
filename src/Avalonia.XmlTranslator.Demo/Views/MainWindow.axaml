@@ -1,0 +1,57 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:prism="http://prismlibrary.com/"
+        prism:ViewModelLocator.AutoWireViewModel="True"
+        xmlns:markup="https://codewf.com"
+        xmlns:main="clr-namespace:Localization.Main"
+        xmlns:developModuleLanguage="clr-namespace:Localization.DevelopModule"
+        xmlns:vm="clr-namespace:Avalonia.XmlTranslator.Demo.ViewModels"
+        mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="450"
+        Width="500" Height="450" Padding="20"
+        x:Class="Avalonia.XmlTranslator.Demo.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Title="{markup:I18n {x:Static main:MainView.Title}}">
+    <Design.DataContext>
+        <vm:MainWindowViewModel />
+    </Design.DataContext>
+    <Grid RowDefinitions="Auto Auto Auto *">
+        <StackPanel Orientation="Horizontal">
+            <SelectableTextBlock Text="{markup:I18n {x:Static main:MainView.ChangeLanguage}}" VerticalAlignment="Center" Margin="0 0 10 0" />
+            <ComboBox ItemsSource="{Binding Languages}"
+                      SelectedItem="{Binding SelectLanguage}"
+                      DisplayMemberBinding="{Binding Language}" />
+        </StackPanel>
+        <HeaderedContentControl Theme="{DynamicResource GroupBox}" HorizontalAlignment="Left" Grid.Row="1"
+                                MinWidth="300" Margin="0 10">
+            <HeaderedContentControl.Header>
+                <Panel>
+                    <SelectableTextBlock Text="{markup:I18n {x:Static main:MainView.Title}}" />
+                </Panel>
+            </HeaderedContentControl.Header>
+            <HeaderedContentControl.Content>
+                <StackPanel>
+                    <SelectableTextBlock Text="{markup:I18n {x:Static main:MainView.Exit}}" />
+                    <SelectableTextBlock Text="{markup:I18n {x:Static main:SettingView.Title}}" />
+                </StackPanel>
+            </HeaderedContentControl.Content>
+        </HeaderedContentControl>
+        <HeaderedContentControl Theme="{DynamicResource GroupBox}" HorizontalAlignment="Left" Grid.Row="2"
+                                MinWidth="300" Margin="0 10">
+            <HeaderedContentControl.Header>
+                <Panel>
+                    <SelectableTextBlock Text="{markup:I18n {x:Static developModuleLanguage:Title2SlugView.Title}}" />
+                </Panel>
+            </HeaderedContentControl.Header>
+            <HeaderedContentControl.Content>
+                <StackPanel>
+                    <SelectableTextBlock Text="{markup:I18n {x:Static developModuleLanguage:Title2SlugView.Title}}" />
+                    <SelectableTextBlock Text="{markup:I18n {x:Static developModuleLanguage:SettingView.MaxLength}}" />
+                    <SelectableTextBlock Text="{markup:I18n {x:Static developModuleLanguage:SettingView.Title}}" />
+                    <SelectableTextBlock Text="{markup:I18n {x:Static developModuleLanguage:Title2SlugView.Convert}}" />
+                </StackPanel>
+            </HeaderedContentControl.Content>
+        </HeaderedContentControl>
+    </Grid>
+</Window>

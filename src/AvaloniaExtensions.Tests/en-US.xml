@@ -1,8 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
+
 <Localization language="English" description="English" cultureName="en-US">
   <Main>
     <MainView>
       <Title>Implement internationalization using XML</Title>
+      <ChangeLanguage>Switch language</ChangeLanguage>
       <Exit>Exit the program</Exit>
     </MainView>
     <SettingView>

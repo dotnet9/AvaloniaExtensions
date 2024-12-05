@@ -6,7 +6,6 @@
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <LangVersion>preview</LangVersion>
-    <GeneratePackageOnBuild Condition=" '$(Configuration)' == 'Release' ">true</GeneratePackageOnBuild>
     <PackageProjectUrl>https://github.com/dotnet9/AvaloniaExtensions</PackageProjectUrl>
     <RepositoryUrl>https://github.com/dotnet9/AvaloniaExtensions</RepositoryUrl>
     <EnableNETAnalyzers>true</EnableNETAnalyzers>

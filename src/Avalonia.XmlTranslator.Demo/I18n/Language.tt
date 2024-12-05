@@ -21,7 +21,7 @@
     if (xmlFilePath!= null)
     {
         XDocument xdoc = XDocument.Load(xmlFilePath);
-        var classNodes = xdoc.Nodes().OfType<XElement>().DescendantsAndSelf().Where(e => e.Descendants().Count() == 2).ToList();
+        var classNodes = xdoc.Nodes().OfType<XElement>().DescendantsAndSelf().Where(e => e.Descendants().Count() == 0).Select(e => e.Parent).Distinct().ToList();
         foreach (var classNode in classNodes)
         {
             var namespaceSegments = classNode.Ancestors().Reverse().Select(node => node.Name.LocalName);
@@ -46,7 +46,8 @@
         foreach (var fieldNode in fieldNodes)
         {
             var propertyName = fieldNode.Name.LocalName;
-            classBuilder.AppendLine($"        public static readonly string {propertyName} = nameof({propertyName});");
+            var languageKey = $"{namespaceName}.{className}.{propertyName}";
+            classBuilder.AppendLine($"        public static readonly string {propertyName} = \"{languageKey}\";");
         }
         classBuilder.AppendLine("    }");
         classBuilder.AppendLine("}");

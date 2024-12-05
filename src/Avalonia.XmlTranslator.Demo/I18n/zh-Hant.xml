@@ -1,8 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
+
 <Localization language="Chinese (Traditional)" description="Chinese (Traditional)" cultureName="zh-Hant">
   <Main>
     <MainView>
       <Title>使用XML實現國際化</Title>
+      <ChangeLanguage>切換語言</ChangeLanguage>
       <Exit>退出程式</Exit>
     </MainView>
     <SettingView>

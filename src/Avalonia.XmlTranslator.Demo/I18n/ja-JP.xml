@@ -1,8 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
+
 <Localization language="Japanese" description="Japanese" cultureName="ja-JP">
   <Main>
     <MainView>
       <Title>XMLを使って国際化を実現する</Title>
+      <ChangeLanguage>言語の切り替え</ChangeLanguage>
       <Exit>プログラムを終了する</Exit>
     </MainView>
     <SettingView>

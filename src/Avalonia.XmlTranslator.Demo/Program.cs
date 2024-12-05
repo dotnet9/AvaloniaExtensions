@@ -1,5 +1,5 @@
-﻿using System;
-using Avalonia;
+using System;
+using Avalonia.ReactiveUI;
 
 namespace Avalonia.XmlTranslator.Demo
 {
@@ -16,7 +16,7 @@ namespace Avalonia.XmlTranslator.Demo
         public static AppBuilder BuildAvaloniaApp()
             => AppBuilder.Configure<App>()
                 .UsePlatformDetect()
-                .WithInterFont()
+                .UseReactiveUI()
                 .LogToTrace();
     }
 }

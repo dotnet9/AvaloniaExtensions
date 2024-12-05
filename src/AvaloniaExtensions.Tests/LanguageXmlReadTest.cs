@@ -14,8 +14,13 @@ namespace AvaloniaExtensions.Tests
             var doc = XDocument.Load(xmlPath);
             Dictionary<string, Dictionary<string, List<string>>> languageKeys = new();
 
-            var classNodes = doc.Nodes().OfType<XElement>().DescendantsAndSelf()
-                .Where(e => e.Descendants().Count() == 2).ToList();
+            var classNodes = doc
+                .Nodes()
+                .OfType<XElement>().DescendantsAndSelf()
+                .Where(e => e.Descendants().Count() == 0)
+                .Select(e => e.Parent)
+                .Distinct()
+                .ToList();
             foreach (var classNode in classNodes)
             {
                 var namespaceSegments = classNode.Ancestors().Reverse().Select(node => node.Name.LocalName);

@@ -18,10 +18,10 @@
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <RepositoryType>git</RepositoryType>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <GeneratePackageOnBuild Condition="'$(Configuration)' == 'Release'">true</GeneratePackageOnBuild>
     <Copyright>https://dotnet9.com</Copyright>
     <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
-
 
   <PropertyGroup Condition="$([MSBuild]::IsTargetFrameworkCompatible('$(TargetFramework)', 'net8.0'))">
     <IsAotCompatible>true</IsAotCompatible>
@@ -30,6 +30,7 @@
   <PropertyGroup Condition="$([MSBuild]::IsTargetFrameworkCompatible('$(TargetFramework)', 'net9.0'))">
     <IsAotCompatible>true</IsAotCompatible>
   </PropertyGroup>
+
 
   <ItemGroup>
     <PackageReference Include="Avalonia" Version="11.2.2" />
