@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Globalization;
 using AvaloniaExtensions.Axaml.Demo.Models;
 using AvaloniaExtensions.Axaml.Markup;
@@ -38,6 +39,9 @@ public class MainWindowViewModel : ViewModelBase
     {
         I18nManager.Instance.Culture = new CultureInfo(language);
     }
+
+    public List<string>? ItemsA { get; }
+    public List<string>? ItemsB { get; } = new List<string>() { "First", "Second" };
 
     public void RaiseChangeStatusCommandHandler()
     {

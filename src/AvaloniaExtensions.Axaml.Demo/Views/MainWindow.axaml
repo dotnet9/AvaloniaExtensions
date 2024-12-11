@@ -28,6 +28,7 @@
                 <TextBlock Foreground="DarkOrange" Text="{markup:I18n {x:Static l:Language.NotRunning}}" />
             </markup:IfConditionConverter.False>
         </markup:IfConditionConverter>
+        <markup:IsCollectionEmptyConverter x:Key="IsCollectionEmptyConverter" />
 
         <DataTemplate x:Key="NormalTemplate">
             <TextBlock Text="正常" Foreground="Green" />
@@ -108,6 +109,25 @@
                                 </Style>
                             </ContentControl.Styles>
                         </ContentControl>
+                    </StackPanel>
+                </Border>
+            </TabItem>
+            <TabItem Header="Converters">
+                <Border Theme="{StaticResource CardBorder}">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock>
+                            <Run Text="ItemsA: " />
+                            <Run
+                                Text="{Binding ItemsA, Converter={StaticResource IsCollectionEmptyConverter}, Mode=
+OneWay}">
+                            </Run>
+                        </TextBlock>
+                        <TextBlock Margin="20 0 0 0">
+                            <Run Text="ItemsB: " />
+                            <Run
+                                Text="{Binding ItemsB, Converter={StaticResource IsCollectionEmptyConverter},Mode=OneWay}">
+                            </Run>
+                        </TextBlock>
                     </StackPanel>
                 </Border>
             </TabItem>
