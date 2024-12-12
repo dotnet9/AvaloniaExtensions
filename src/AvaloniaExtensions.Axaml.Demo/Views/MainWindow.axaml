@@ -62,7 +62,7 @@
                             <Button Content="中文繁體" Command="{Binding RaiseChangeLanguageHandler}"
                                     CommandParameter="zh-Hant" />
                             <Button Content="日本語" Command="{Binding RaiseChangeLanguageHandler}"
-                                    CommandParameter="ja-JP" />
+                                    CommandParameter="ja-JP"/>
                         </StackPanel>
                     </StackPanel>
                 </Border>
