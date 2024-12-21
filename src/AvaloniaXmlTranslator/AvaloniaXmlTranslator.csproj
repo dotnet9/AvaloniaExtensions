@@ -33,7 +33,7 @@
 
 
   <ItemGroup>
-    <PackageReference Include="Avalonia" Version="11.2.2" />
+    <PackageReference Include="Avalonia" Version="11.2.3" />
   </ItemGroup>
 
   <ItemGroup>
