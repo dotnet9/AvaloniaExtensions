@@ -28,7 +28,7 @@ public class MainWindowViewModel : ViewModelBase
         SelectLanguage = Languages.FirstOrDefault(l => l.CultureName == I18nManager.Instance.Culture.Name);
 
         var titleCurrentCulture = I18nManager.Instance.GetResource(Localization.Main.MainView.Title);
-        var titleZhCN = I18nManager.Instance.GetResource("zh-CN", Localization.Main.MainView.Title);
-        var titleEnUS = I18nManager.Instance.GetResource("en-US", Localization.Main.MainView.Title);
+        var titleZhCN = I18nManager.Instance.GetResource(Localization.Main.MainView.Title, "zh-CN");
+        var titleEnUS = I18nManager.Instance.GetResource(Localization.Main.MainView.Title, "en-US");
     }
 }

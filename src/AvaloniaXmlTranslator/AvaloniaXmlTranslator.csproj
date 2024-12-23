@@ -37,7 +37,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="..\..\README.md" Pack="true" PackagePath="" />
-    <None Include="..\..\logo.ico" Pack="true" PackagePath="" />
+    <None Include="..\..\avalonia-using-xml-files-for-internationalization.md" Pack="true" PackagePath="README.md" />
+    <None Include="..\..\logo.png" Pack="true" PackagePath="" />
   </ItemGroup>
 </Project>
