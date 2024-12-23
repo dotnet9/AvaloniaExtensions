@@ -92,24 +92,19 @@ public class I18nManager : INotifyPropertyChanged
 
     public event EventHandler<EventArgs>? CultureChanged;
 
-    public static T? GetResource<T>(string key)
+    public string? GetResource(string key, string? cultureName = null)
     {
-        if (Instance.Resources.TryGetValue(Instance.Culture.Name, out var currentLanguages)
-            && currentLanguages.Languages.TryGetValue(key, out var resource) && resource is T result)
+        var culture = Culture.Name;
+        if (!string.IsNullOrWhiteSpace(cultureName))
         {
-            return result;
+            culture = cultureName;
+        }
+        if (Instance.Resources.TryGetValue(culture, out var currentLanguages)
+            && currentLanguages.Languages.TryGetValue(key, out string resource))
+        {
+            return resource;
         }
 
-        return default;
-    }
-
-    public static object? GetObject(string key)
-    {
-        return GetResource<object>(key);
-    }
-
-    public static string? GetString(string key)
-    {
-        return GetResource<string>(key);
+        return string.Empty;
     }
 }

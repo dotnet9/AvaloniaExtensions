@@ -26,8 +26,9 @@ public class I18nBinding : MultiBindingExtensionBase
         Bindings.Add(keyBinding);
     }
 
-    public I18nBinding(object key, params object[]? args) : this(key)
+    public I18nBinding(object key, string? cultureName, params object[]? args) : this(key)
     {
+        CultureName = cultureName;
         if (args is not { Length: > 0 })
         {
             return;
@@ -40,6 +41,8 @@ public class I18nBinding : MultiBindingExtensionBase
     }
 
     public object Key { get; }
+
+    public string? CultureName { get; set; }
 
     public ArgCollection Args { get; }
 

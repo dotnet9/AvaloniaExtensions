@@ -18,5 +18,6 @@ public class I18nExtension : MarkupExtension
 
     public object Key { get; }
     public object[]? Args { get; }
-    public override object ProvideValue(IServiceProvider serviceProvider) => new I18nBinding(Key, Args);
+    public string? CultureName { get; set; }
+    public override object ProvideValue(IServiceProvider serviceProvider) => new I18nBinding(Key, CultureName, Args);
 }

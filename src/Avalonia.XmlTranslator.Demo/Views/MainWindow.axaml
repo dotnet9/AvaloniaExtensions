@@ -3,6 +3,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:prism="http://prismlibrary.com/"
+        xmlns:u="https://irihi.tech/ursa"
         prism:ViewModelLocator.AutoWireViewModel="True"
         xmlns:markup="https://codewf.com"
         xmlns:main="clr-namespace:Localization.Main"
@@ -23,6 +24,7 @@
                       SelectedItem="{Binding SelectLanguage}"
                       DisplayMemberBinding="{Binding Language}" />
         </StackPanel>
+
         <HeaderedContentControl Theme="{DynamicResource GroupBox}" HorizontalAlignment="Left" Grid.Row="1"
                                 MinWidth="300" Margin="0 10">
             <HeaderedContentControl.Header>
@@ -37,6 +39,7 @@
                 </StackPanel>
             </HeaderedContentControl.Content>
         </HeaderedContentControl>
+
         <HeaderedContentControl Theme="{DynamicResource GroupBox}" HorizontalAlignment="Left" Grid.Row="2"
                                 MinWidth="300" Margin="0 10">
             <HeaderedContentControl.Header>
@@ -51,6 +54,24 @@
                     <SelectableTextBlock Text="{markup:I18n {x:Static developModuleLanguage:SettingView.Title}}" />
                     <SelectableTextBlock Text="{markup:I18n {x:Static developModuleLanguage:Title2SlugView.Convert}}" />
                 </StackPanel>
+            </HeaderedContentControl.Content>
+        </HeaderedContentControl>
+
+        <HeaderedContentControl Theme="{DynamicResource GroupBox}" HorizontalAlignment="Left" Grid.Row="3"
+                                MinWidth="300" Margin="0 10">
+            <HeaderedContentControl.Header>
+                <Panel>
+                    <SelectableTextBlock Text="{markup:I18n {x:Static developModuleLanguage:Title2SlugView.Title}}" />
+                </Panel>
+            </HeaderedContentControl.Header>
+            <HeaderedContentControl.Content>
+                <u:Form LabelPosition="Left" LabelWidth="*">
+                    <SelectableTextBlock u:FormItem.Label="Current Thread" Text="{markup:I18n {x:Static developModuleLanguage:Title2SlugView.Title}}" />
+                    <SelectableTextBlock u:FormItem.Label="en-US" Text="{markup:I18n {x:Static developModuleLanguage:Title2SlugView.Title}, CultureName=en-US}" />
+                    <SelectableTextBlock u:FormItem.Label="ja-JP" Text="{markup:I18n {x:Static developModuleLanguage:Title2SlugView.Title}, CultureName=ja-JP}" />
+                    <SelectableTextBlock u:FormItem.Label="zh-CN" Text="{markup:I18n {x:Static developModuleLanguage:Title2SlugView.Title}, CultureName=zh-CN}" />
+                    <SelectableTextBlock u:FormItem.Label="zh-Hant" Text="{markup:I18n {x:Static developModuleLanguage:Title2SlugView.Title}, CultureName=zh-Hant}" />
+                </u:Form>
             </HeaderedContentControl.Content>
         </HeaderedContentControl>
     </Grid>
