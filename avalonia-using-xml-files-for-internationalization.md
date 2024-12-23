@@ -1,25 +1,7 @@
----
-title: Avalonia使用XML文件实现国际化
-slug: avalonia-using-xml-files-for-internationalization
-description: 本文深入探讨了 Avalonia 使用 XML 文件实现国际化的方法与优势。通过与 Resx 资源文件对比，为开发者提供了选择依据。XML 实现国际化适用于有用户侧修改需求、期望借助 AI 编辑且追求清晰语言结构管理的场景。文中详细介绍了从创建语言文件、强类型生成到具体使用以及语言管理的整套流程，并提供了相关资源链接，如 XML 语言管理包、案例 Demo 及语言管理工具、Resx 资源管理扩展等，有助于开发者快速上手并在实际项目中应用该国际化方案，提升 Avalonia 应用的全球化适配能力与用户体验。
-date: 2024-12-05 21:47:17
-lastmod: 2024-12-23 12:34:21
-copyright: Original
-draft: false
-cover: https://img1.dotnet9.com/2024/12/cover_01.png
-categories: 
-    - .NET
-tags: 
-    - C#
-    - Avalonia UI
-    - XML
-    - 本地化
-    - 国际化
----
+## 1. XML 实现 Avalonia UI 国际化的优势剖析
 
 在软件开发日益全球化的今天，Avalonia 的国际化实现策略成为了众多开发者关注的焦点。继上一篇 [Avalonia 国际化之路：Resx 资源文件的深度应用与探索](https://dotnet9.com/bbs/post/2024/12/avalonia-internationalization-depth-application-and-exploration-of-resx-resource-files)之后，本文将引领大家深入探究如何运用自定义 XML 文件来达成 Avalonia 国际化的目标，开启一段全新的技术探索之旅。
 
-## 1. XML 实现 Avalonia UI 国际化的优势剖析
 
 ### 1.1. 突破维护局限，拥抱用户定制
 

@@ -15,6 +15,7 @@ public class I18nManager : INotifyPropertyChanged
     public event PropertyChangedEventHandler? PropertyChanged;
 
     public Dictionary<string, LocalizationLanguage> Resources { get; } = new();
+    public static I18nManager Instance { get; } = new();
 
     // 加载指定目录下的所有语言文件（XML格式）
     private I18nManager()
@@ -68,7 +69,6 @@ public class I18nManager : INotifyPropertyChanged
         }
     }
 
-    public static I18nManager Instance { get; } = new();
 
     private CultureInfo _culture;
 
@@ -92,6 +92,8 @@ public class I18nManager : INotifyPropertyChanged
 
     public event EventHandler<EventArgs>? CultureChanged;
 
+    public List<LocalizationLanguage>? GetLanguages() => Resources.Select(kvp => kvp.Value).ToList();
+
     public string? GetResource(string key, string? cultureName = null)
     {
         var culture = Culture.Name;
@@ -99,6 +101,7 @@ public class I18nManager : INotifyPropertyChanged
         {
             culture = cultureName;
         }
+
         if (Instance.Resources.TryGetValue(culture, out var currentLanguages)
             && currentLanguages.Languages.TryGetValue(key, out string resource))
         {
