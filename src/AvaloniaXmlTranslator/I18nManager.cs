@@ -108,6 +108,6 @@ public class I18nManager : INotifyPropertyChanged
             return resource;
         }
 
-        return string.Empty;
+        return key;
     }
 }
