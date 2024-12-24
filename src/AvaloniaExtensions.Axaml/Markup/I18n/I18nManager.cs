@@ -34,6 +34,34 @@ public class I18nManager : INotifyPropertyChanged
         _culture = CultureInfo.InvariantCulture;
     }
 
+    /// <summary>
+    /// 手动添加资源信息
+    /// </summary>
+    /// <param name="assemblies"></param>
+    public void AddResource(params Assembly[] assemblies)
+    {
+        var dicts = assemblies.SelectMany(assembly =>
+                assembly.GetTypes()
+                    .Where(type => string.Compare(type?.FullName, "i18n", StringComparison.OrdinalIgnoreCase) != 0)
+                    .ToDictionary(
+                        type => type,
+                        type => type.GetProperty(nameof(ResourceManager), BindingFlags.Public | BindingFlags.Static)
+                            ?.GetValue(null, null) as ResourceManager)
+            )
+            .Where(pair => pair.Value != null)
+            .ToDictionary(pair => pair.Key, pair => pair.Value!);
+        if (dicts.Count != 0)
+        {
+            foreach (KeyValuePair<Type, ResourceManager> pair in dicts)
+            {
+                if (!_resourceManagers.ContainsKey(pair.Key))
+                {
+                    _resourceManagers.Add(pair.Key, pair.Value);
+                }
+            }
+        }
+    }
+
     public static I18nManager Instance { get; } = new I18nManager();
 
     public CultureInfo Culture
