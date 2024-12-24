@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Globalization;
 using System.Linq;
 using AvaloniaXmlTranslator;
@@ -22,10 +23,14 @@ public class MainWindowViewModel : ViewModelBase
         }
     }
 
+    public ObservableCollection<CultureInfo> AllCultures { get; }
+
     public MainWindowViewModel()
     {
         Languages = I18nManager.Instance.Resources.Select(kvp => kvp.Value).ToList();
         SelectLanguage = Languages.FirstOrDefault(l => l.CultureName == I18nManager.Instance.Culture.Name);
+
+        AllCultures = new ObservableCollection<CultureInfo>(I18nManager.Instance.GetAvailableCultures());
 
         var titleCurrentCulture = I18nManager.Instance.GetResource(Localization.Main.MainView.Title);
         var titleZhCN = I18nManager.Instance.GetResource(Localization.Main.MainView.Title, "zh-CN");

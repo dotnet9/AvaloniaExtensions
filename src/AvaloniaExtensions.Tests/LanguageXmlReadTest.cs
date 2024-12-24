@@ -1,3 +1,4 @@
+using System.Globalization;
 using System.Xml.Linq;
 
 namespace AvaloniaExtensions.Tests
@@ -34,6 +35,19 @@ namespace AvaloniaExtensions.Tests
             }
 
             Assert.IsTrue(languageKeys.Count > 0);
+        }
+
+
+        [TestMethod]
+        public void ReadCulturesTest()
+        {
+            var _availableCultures = CultureInfo.GetCultures(CultureTypes.AllCultures)
+                .Where(culture => !CultureInfo.InvariantCulture.Equals(culture))
+                //.Except(existingLanguages)
+                .OrderBy(culture => culture.DisplayName)
+                .ToArray();
+
+            Assert.IsTrue(_availableCultures.Length > 0);
         }
 
         private void GenerateClasses(XElement element, string namespaceName,

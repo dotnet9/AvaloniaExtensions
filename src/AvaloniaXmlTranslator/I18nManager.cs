@@ -110,4 +110,15 @@ public class I18nManager : INotifyPropertyChanged
 
         return key;
     }
+
+    public List<CultureInfo> GetAvailableCultures()
+    {
+        var availableCultures = CultureInfo.GetCultures(CultureTypes.AllCultures)
+            .Where(culture => !CultureInfo.InvariantCulture.Equals(culture))
+            //.Except(existingLanguages)
+            .OrderBy(culture => culture.DisplayName)
+            .ToList();
+
+        return availableCultures;
+    }
 }
