@@ -22,7 +22,7 @@ public class I18nManager : INotifyPropertyChanged
         _resourceManagers = AppDomain.CurrentDomain.GetAssemblies()
             .SelectMany(assembly =>
                 assembly.GetTypes()
-                    .Where(type => type?.FullName?.Contains("I18n.Resources") == true)
+                    .Where(type => string.Compare(type?.FullName, "i18n", StringComparison.OrdinalIgnoreCase) != 0)
                     .ToDictionary(
                         type => type,
                         type => type.GetProperty(nameof(ResourceManager), BindingFlags.Public | BindingFlags.Static)
