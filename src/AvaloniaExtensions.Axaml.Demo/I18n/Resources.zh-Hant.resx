@@ -130,6 +130,9 @@
     <value>未運行</value>
   </data>
   <data name="RunningCountInfo" xml:space="preserve">
-    <value>正在運行 {0} 作業系統</value>
+    <value>正在運行 {0} 作業系統,{1}</value>
+  </data>
+  <data name="CurrentTimeFormat" xml:space="preserve">
+    <value>當前時間是 {0}</value>
   </data>
 </root>

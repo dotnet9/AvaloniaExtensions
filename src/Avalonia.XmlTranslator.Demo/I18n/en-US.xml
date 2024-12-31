@@ -4,6 +4,8 @@
   <Main>
     <MainView>
       <Title>Implement internationalization using XML</Title>
+      <RunningCountInfo>Running {0} operating system, {1}</RunningCountInfo>
+      <CurrentTimeFormat>The current time is {0}</CurrentTimeFormat>
       <ChangeLanguage>Switch language</ChangeLanguage>
       <Exit>Exit the program</Exit>
     </MainView>

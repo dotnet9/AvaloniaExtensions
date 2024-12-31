@@ -10,6 +10,8 @@ namespace Localization.Main
     public static class MainView
     {
         public static readonly string Title = "Localization.Main.MainView.Title";
+        public static readonly string RunningCountInfo = "Localization.Main.MainView.RunningCountInfo";
+        public static readonly string CurrentTimeFormat = "Localization.Main.MainView.CurrentTimeFormat";
         public static readonly string ChangeLanguage = "Localization.Main.MainView.ChangeLanguage";
         public static readonly string Exit = "Localization.Main.MainView.Exit";
     }

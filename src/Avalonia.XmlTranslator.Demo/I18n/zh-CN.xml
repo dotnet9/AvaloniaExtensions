@@ -4,6 +4,8 @@
   <Main>
     <MainView>
       <Title>使用XML实现国际化</Title>
+      <RunningCountInfo>正在运行 {0} 操作系统,{1}</RunningCountInfo>
+      <CurrentTimeFormat>当前时间是 {0}</CurrentTimeFormat>
       <ChangeLanguage>切换语言</ChangeLanguage>
       <Exit>退出程序</Exit>
     </MainView>

@@ -16,4 +16,5 @@ public static class Language
 	public static readonly string Running = "Running";
 	public static readonly string NotRunning = "NotRunning";
 	public static readonly string RunningCountInfo = "RunningCountInfo";
+	public static readonly string CurrentTimeFormat = "CurrentTimeFormat";
 }

@@ -70,6 +70,15 @@ namespace AvaloniaExtensions.Axaml.Demo.I18n {
         }
         
         /// <summary>
+        ///   查找类似 The current time is {0} 的本地化字符串。
+        /// </summary>
+        public static string CurrentTimeFormat {
+            get {
+                return ResourceManager.GetString("CurrentTimeFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Not running 的本地化字符串。
         /// </summary>
         public static string NotRunning {
@@ -88,7 +97,7 @@ namespace AvaloniaExtensions.Axaml.Demo.I18n {
         }
         
         /// <summary>
-        ///   查找类似 Running {0} operating system 的本地化字符串。
+        ///   查找类似 Running {0} operating system, {1} 的本地化字符串。
         /// </summary>
         public static string RunningCountInfo {
             get {

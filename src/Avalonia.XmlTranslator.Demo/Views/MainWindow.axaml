@@ -10,8 +10,8 @@
         xmlns:main="clr-namespace:Localization.Main"
         xmlns:developModuleLanguage="clr-namespace:Localization.DevelopModule"
         xmlns:vm="clr-namespace:Avalonia.XmlTranslator.Demo.ViewModels"
-        mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="450"
-        Width="500" Height="450" Padding="20"
+        mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="450"
+        Width="600" Height="450" Padding="20"
         x:Class="Avalonia.XmlTranslator.Demo.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
         Title="{markup:I18n {x:Static main:MainView.Title}}">
@@ -30,7 +30,7 @@
             <ComboBox ItemsSource="{Binding Languages}"
                       SelectedItem="{Binding SelectLanguage}"
                       DisplayMemberBinding="{Binding Language}"
-                      Margin="20 0"/>
+                      Margin="20 0" />
 
             <ComboBox ItemsSource="{Binding AllCultures}">
                 <ComboBox.ItemTemplate>
@@ -43,6 +43,10 @@
         <TabControl Grid.Row="1" TabStripPlacement="Left" Margin="0 20 0 0">
             <TabItem Header="{markup:I18n {x:Static main:MainView.Title}}">
                 <StackPanel>
+                    <SelectableTextBlock
+                        Text="{markup:I18n {x:Static main:MainView.RunningCountInfo}, Windows 11, x64}" />
+                    <SelectableTextBlock
+                        Text="{markup:I18n {x:Static main:MainView.CurrentTimeFormat}, {Binding CurrentTime}}" />
                     <SelectableTextBlock Text="{markup:I18n {x:Static main:MainView.Exit}}" />
                     <SelectableTextBlock Text="{markup:I18n {x:Static main:SettingView.Title}}" />
                 </StackPanel>

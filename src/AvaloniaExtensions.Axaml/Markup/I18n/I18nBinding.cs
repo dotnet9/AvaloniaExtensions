@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Avalonia.Data;
 using Avalonia.Data.Converters;
 using AvaloniaExtensions.Axaml.Converters;
@@ -27,9 +28,9 @@ public class I18nBinding : MultiBindingExtensionBase
         Bindings.Add(keyBinding);
     }
 
-    public I18nBinding(object key, params object[]? args) : this(key)
+    public I18nBinding(object key, List<object> args) : this(key)
     {
-        if (args is not { Length: > 0 })
+        if (args is not { Count: > 0 })
         {
             return;
         }

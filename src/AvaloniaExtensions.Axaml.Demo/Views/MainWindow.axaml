@@ -1,25 +1,32 @@
-<Window xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:vm="using:AvaloniaExtensions.Axaml.Demo.ViewModels"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:markup="https://codewf.com"
-        xmlns:l="clr-namespace:AvaloniaExtensions.Axaml.Demo.I18n"
-        xmlns:models="clr-namespace:AvaloniaExtensions.Axaml.Demo.Models"
-        mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="300"
-        Width="600" Height="300" WindowStartupLocation="CenterOwner"
-        x:Class="AvaloniaExtensions.Axaml.Demo.Views.MainWindow"
-        x:DataType="vm:MainWindowViewModel"
-        Icon="/Assets/logo.ico"
-        Title="{markup:I18n {Binding Title}}">
+<Window
+    x:Class="AvaloniaExtensions.Axaml.Demo.Views.MainWindow"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:l="clr-namespace:AvaloniaExtensions.Axaml.Demo.I18n"
+    xmlns:markup="https://codewf.com"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:models="clr-namespace:AvaloniaExtensions.Axaml.Demo.Models"
+    xmlns:vm="using:AvaloniaExtensions.Axaml.Demo.ViewModels"
+    Title="{markup:I18n {Binding Title}}"
+    Width="600"
+    Height="300"
+    d:DesignHeight="300"
+    d:DesignWidth="600"
+    x:DataType="vm:MainWindowViewModel"
+    Icon="/Assets/logo.ico"
+    WindowStartupLocation="CenterOwner"
+    mc:Ignorable="d">
 
     <Design.DataContext>
-        <!-- This only sets the DataContext for the previewer in an IDE,
-             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+        <!--
+            This only sets the DataContext for the previewer in an IDE,
+            to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs)
+        -->
         <vm:MainWindowViewModel />
     </Design.DataContext>
     <Window.Resources>
-        <markup:EnumToBooleanConverter x:Key="EnumToBooleanConverter"></markup:EnumToBooleanConverter>
+        <markup:EnumToBooleanConverter x:Key="EnumToBooleanConverter" />
         <markup:IfConditionConverter x:Key="StatusConditionConverter">
             <markup:IfConditionConverter.True>
                 <TextBlock Foreground="Green" Text="{markup:I18n {x:Static l:Language.Running}}" />
@@ -31,38 +38,49 @@
         <markup:IsCollectionEmptyConverter x:Key="IsCollectionEmptyConverter" />
 
         <DataTemplate x:Key="NormalTemplate">
-            <TextBlock Text="正常" Foreground="Green" />
+            <TextBlock Foreground="Green" Text="正常" />
         </DataTemplate>
         <DataTemplate x:Key="OverLimitTemplate">
-            <TextBlock Text="超限" Foreground="DarkOrange" />
+            <TextBlock Foreground="DarkOrange" Text="超限" />
         </DataTemplate>
         <DataTemplate x:Key="OvertimeTemplate">
-            <TextBlock Text="超时" Foreground="Red" />
+            <TextBlock Foreground="Red" Text="超时" />
         </DataTemplate>
         <DataTemplate x:Key="UserChangedTemplate">
-            <TextBlock Text="锁定" Foreground="Red" />
+            <TextBlock Foreground="Red" Text="锁定" />
         </DataTemplate>
     </Window.Resources>
-    <Border Background="{StaticResource CloudDrawingBrush}" Classes="Shadow" Theme="{StaticResource CardBorder}">
+    <Border
+        Background="{StaticResource CloudDrawingBrush}"
+        Classes="Shadow"
+        Theme="{StaticResource CardBorder}">
         <TabControl TabStripPlacement="Left">
             <TabItem Header="I18n">
                 <Border Theme="{StaticResource CardBorder}">
                     <StackPanel>
-                        <StackPanel HorizontalAlignment="Center"
-                                    VerticalAlignment="Center">
-                            <TextBlock Text="{markup:I18n {Binding Title}}" />
-                            <TextBlock Text="{markup:I18n {x:Static l:Language.Welcome}}" />
-                            <TextBlock Text="{markup:I18n {x:Static l:Language.RunningCountInfo},Win10}" />
+                        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <SelectableTextBlock Text="{markup:I18n {Binding Title}}" />
+                            <SelectableTextBlock Text="{markup:I18n {x:Static l:Language.Welcome}}" />
+                            <SelectableTextBlock Text="{markup:I18n {x:Static l:Language.RunningCountInfo}, Win11, x64}" />
+                            <SelectableTextBlock Text="{markup:I18n {x:Static l:Language.CurrentTimeFormat}, {Binding CurrentTime}}" />
                         </StackPanel>
                         <StackPanel Orientation="Horizontal">
-                            <Button Content="English" Command="{Binding RaiseChangeLanguageHandler}"
-                                    CommandParameter="en" />
-                            <Button Content="中文简体" Command="{Binding RaiseChangeLanguageHandler}"
-                                    CommandParameter="zh-CN" />
-                            <Button Content="中文繁體" Command="{Binding RaiseChangeLanguageHandler}"
-                                    CommandParameter="zh-Hant" />
-                            <Button Content="日本語" Command="{Binding RaiseChangeLanguageHandler}"
-                                    CommandParameter="ja-JP"/>
+                            <Button
+                                Command="{Binding RaiseChangeLanguageHandler}"
+                                CommandParameter="en"
+                                Content="English" />
+                            <Button
+                                Command="{Binding RaiseChangeLanguageHandler}"
+                                CommandParameter="zh-CN"
+                                Content="中文简体" />
+                            <Button
+                                Command="{Binding RaiseChangeLanguageHandler}"
+                                CommandParameter="zh-Hant"
+                                Content="中文繁體" />
+                            <Button
+                                Command="{Binding RaiseChangeLanguageHandler}"
+                                CommandParameter="ja-JP"
+                                Content="日本語" />
                         </StackPanel>
                     </StackPanel>
                 </Border>
@@ -70,10 +88,9 @@
             <TabItem Header="If">
                 <Border Theme="{StaticResource CardBorder}">
                     <StackPanel>
-                        <Button Content="Change" Command="{Binding RaiseChangeStatusCommandHandler}" />
-                        <TextBlock Text="{markup:If {Binding Status}, 已运行, 未运行}" />
-                        <TextBlock
-                            Text="{markup:If {Binding Status}, {markup:I18n {x:Static l:Language.Running}}, {markup:I18n {x:Static l:Language.NotRunning}}}" />
+                        <Button Command="{Binding RaiseChangeStatusCommandHandler}" Content="Change" />
+                        <SelectableTextBlock Text="{markup:If {Binding Status}, 已运行, 未运行}" />
+                        <SelectableTextBlock Text="{markup:If {Binding Status}, {markup:I18n {x:Static l:Language.Running}}, {markup:I18n {x:Static l:Language.NotRunning}}}" />
 
                         <ContentControl Content="{Binding Status, Converter={StaticResource StatusConditionConverter}}" />
                     </StackPanel>
@@ -82,16 +99,12 @@
             <TabItem Header="Switch">
                 <Border Theme="{StaticResource CardBorder}">
                     <StackPanel>
-                        <Button Content="Change" Command="{Binding RaiseChangeStatusCommandHandler}" />
+                        <Button Command="{Binding RaiseChangeStatusCommandHandler}" Content="Change" />
                         <StackPanel Orientation="Horizontal">
-                            <RadioButton Content="Normal"
-                                         IsChecked="{Binding AlarmStatus, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter={x:Static models:AlarmStatus.Normal}}" />
-                            <RadioButton Content="OverLimit"
-                                         IsChecked="{Binding AlarmStatus, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter={x:Static models:AlarmStatus.OverLimit}}" />
-                            <RadioButton Content="Overtime"
-                                         IsChecked="{Binding AlarmStatus, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter={x:Static models:AlarmStatus.Overtime}}" />
-                            <RadioButton Content="UserChanged"
-                                         IsChecked="{Binding AlarmStatus, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter={x:Static models:AlarmStatus.UserChanged}}" />
+                            <RadioButton Content="Normal" IsChecked="{Binding AlarmStatus, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter={x:Static models:AlarmStatus.Normal}}" />
+                            <RadioButton Content="OverLimit" IsChecked="{Binding AlarmStatus, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter={x:Static models:AlarmStatus.OverLimit}}" />
+                            <RadioButton Content="Overtime" IsChecked="{Binding AlarmStatus, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter={x:Static models:AlarmStatus.Overtime}}" />
+                            <RadioButton Content="UserChanged" IsChecked="{Binding AlarmStatus, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter={x:Static models:AlarmStatus.UserChanged}}" />
                         </StackPanel>
                         <ContentControl Content="{Binding AlarmStatus}">
                             <ContentControl.Styles>
@@ -115,19 +128,14 @@
             <TabItem Header="Converters">
                 <Border Theme="{StaticResource CardBorder}">
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock>
+                        <SelectableTextBlock>
                             <Run Text="ItemsA: " />
-                            <Run
-                                Text="{Binding ItemsA, Converter={StaticResource IsCollectionEmptyConverter}, Mode=
-OneWay}">
-                            </Run>
-                        </TextBlock>
-                        <TextBlock Margin="20 0 0 0">
+                            <Run Text="{Binding ItemsA, Converter={StaticResource IsCollectionEmptyConverter}, Mode=OneWay}" />
+                        </SelectableTextBlock>
+                        <SelectableTextBlock Margin="20,0,0,0">
                             <Run Text="ItemsB: " />
-                            <Run
-                                Text="{Binding ItemsB, Converter={StaticResource IsCollectionEmptyConverter},Mode=OneWay}">
-                            </Run>
-                        </TextBlock>
+                            <Run Text="{Binding ItemsB, Converter={StaticResource IsCollectionEmptyConverter}, Mode=OneWay}" />
+                        </SelectableTextBlock>
                     </StackPanel>
                 </Border>
             </TabItem>

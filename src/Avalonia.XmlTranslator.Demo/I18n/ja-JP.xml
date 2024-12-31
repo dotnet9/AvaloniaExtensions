@@ -4,6 +4,8 @@
   <Main>
     <MainView>
       <Title>XMLを使って国際化を実現する</Title>
+      <RunningCountInfo>実行中 {0} オペレーティングシステム,{1}</RunningCountInfo>
+      <CurrentTimeFormat>現在の時間は {0} です。</CurrentTimeFormat>
       <ChangeLanguage>言語の切り替え</ChangeLanguage>
       <Exit>プログラムを終了する</Exit>
     </MainView>

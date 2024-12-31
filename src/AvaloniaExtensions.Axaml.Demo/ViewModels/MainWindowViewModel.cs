@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Threading.Tasks;
 using AvaloniaExtensions.Axaml.Demo.Models;
 using AvaloniaExtensions.Axaml.Markup;
 using ReactiveUI;
@@ -9,6 +10,18 @@ namespace AvaloniaExtensions.Axaml.Demo.ViewModels;
 
 public class MainWindowViewModel : ViewModelBase
 {
+    public MainWindowViewModel()
+    {
+        Task.Run(async () =>
+        {
+            while (true)
+            {
+                CurrentTime = DateTime.Now;
+                await Task.Delay(TimeSpan.FromSeconds(1));
+            }
+        });
+    }
+
     public string Title => "AppName";
 
     private bool _status;
@@ -17,6 +30,14 @@ public class MainWindowViewModel : ViewModelBase
     {
         get => _status;
         set => this.RaiseAndSetIfChanged(ref _status, value);
+    }
+
+    private DateTime _currentTime;
+
+    public DateTime CurrentTime
+    {
+        get => _currentTime;
+        set => this.RaiseAndSetIfChanged(ref _currentTime, value);
     }
 
     private AlarmStatus _alarmStatus;

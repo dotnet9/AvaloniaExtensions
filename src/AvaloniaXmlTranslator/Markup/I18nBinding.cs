@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Avalonia.Data;
 using Avalonia.Data.Converters;
 using AvaloniaXmlTranslator.Converters;
@@ -26,10 +27,10 @@ public class I18nBinding : MultiBindingExtensionBase
         Bindings.Add(keyBinding);
     }
 
-    public I18nBinding(object key, string? cultureName, params object[]? args) : this(key)
+    public I18nBinding(object key, string? cultureName, List<object> args) : this(key)
     {
         CultureName = cultureName;
-        if (args is not { Length: > 0 })
+        if (args is not { Count: > 0 })
         {
             return;
         }
