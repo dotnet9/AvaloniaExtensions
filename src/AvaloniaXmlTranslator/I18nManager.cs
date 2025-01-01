@@ -67,6 +67,7 @@ public class I18nManager : INotifyPropertyChanged
                 Resources[language.CultureName].Languages[key] = propertyNode.Value;
             }
         }
+        _culture = CultureInfo.InvariantCulture;
     }
 
 
