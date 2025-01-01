@@ -3,9 +3,10 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:prism="http://prismlibrary.com/"
     xmlns:u-semi="https://irihi.tech/ursa/themes/semi"
+    xmlns:semi="https://irihi.tech/semi"
     x:Class="Avalonia.XmlTranslator.Demo.App">
     <prism:PrismApplication.Styles>
-        <StyleInclude Source="avares://Semi.Avalonia/Themes/Index.axaml" />
+        <semi:SemiTheme Locale="zh-CN" />
         <u-semi:SemiTheme Locale="zh-CN" />
     </prism:PrismApplication.Styles>
 </prism:PrismApplication>
