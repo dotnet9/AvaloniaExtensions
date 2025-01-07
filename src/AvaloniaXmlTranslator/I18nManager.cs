@@ -45,7 +45,8 @@ public class I18nManager : INotifyPropertyChanged
 
         if (xmlFiles.Any() != true)
         {
-            throw new Exception("Please provide the language XML file");
+            Console.WriteLine("Please provide the language XML file");
+            return;
         }
 
         foreach (var xmlFile in xmlFiles)
