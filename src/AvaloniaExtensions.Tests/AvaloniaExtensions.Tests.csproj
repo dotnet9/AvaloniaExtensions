@@ -1,4 +1,4 @@
-<Project Sdk="MSTest.Sdk/3.6.1">
+﻿<Project Sdk="MSTest.Sdk/3.6.1">
 
   <PropertyGroup>
     <TargetFramework>net9.0-windows</TargetFramework>
@@ -19,18 +19,18 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Update="MSTest.Analyzers" Version="3.7.0">
+    <PackageReference Update="MSTest.Analyzers" Version="3.7.2">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Update="MSTest.TestAdapter" Version="3.7.0" />
+    <PackageReference Update="MSTest.TestAdapter" Version="3.7.2" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Update="MSTest.TestFramework" Version="3.7.0" />
+    <PackageReference Update="MSTest.TestFramework" Version="3.7.2" />
   </ItemGroup>
 
 </Project>
