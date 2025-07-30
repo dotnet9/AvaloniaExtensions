@@ -19,18 +19,18 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Update="MSTest.Analyzers" Version="3.9.3">
+    <PackageReference Update="MSTest.Analyzers" Version="4.0.0-preview.25372.6">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Update="MSTest.TestAdapter" Version="3.9.3" />
+    <PackageReference Update="MSTest.TestAdapter" Version="4.0.0-preview.25372.6" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Update="MSTest.TestFramework" Version="3.9.3" />
+    <PackageReference Update="MSTest.TestFramework" Version="4.0.0-preview.25372.6" />
   </ItemGroup>
 
 </Project>
