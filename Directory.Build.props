@@ -2,7 +2,8 @@
 
   <PropertyGroup>
     <Authors>沙漠尽头的狼</Authors>
-    <Copyright>Copyright (c) 2024 https://codewf.com</Copyright>
+    <Copyright>Copyright (c) 2025 https://codewf.com</Copyright>
+    <AvaloniaVersion>11.3.3</AvaloniaVersion>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <LangVersion>preview</LangVersion>
