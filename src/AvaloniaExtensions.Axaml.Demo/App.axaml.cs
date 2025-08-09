@@ -1,10 +1,8 @@
-using System.Globalization;
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
 using AvaloniaExtensions.Axaml.Demo.ViewModels;
 using AvaloniaExtensions.Axaml.Demo.Views;
-using AvaloniaExtensions.Axaml.Markup;
 
 namespace AvaloniaExtensions.Axaml.Demo
 {
@@ -13,7 +11,6 @@ namespace AvaloniaExtensions.Axaml.Demo
         public override void Initialize()
         {
             AvaloniaXamlLoader.Load(this);
-            I18nManager.Instance.Culture = new CultureInfo("zh-CN");
         }
 
         public override void OnFrameworkInitializationCompleted()

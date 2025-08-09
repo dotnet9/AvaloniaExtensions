@@ -56,10 +56,6 @@ public class MainWindowViewModel : ViewModelBase
         set => this.RaiseAndSetIfChanged(ref _statusKind, value);
     }
 
-    public void RaiseChangeLanguageHandler(string language)
-    {
-        I18nManager.Instance.Culture = new CultureInfo(language);
-    }
 
     public List<string>? ItemsA { get; }
     public List<string>? ItemsB { get; } = new List<string>() { "First", "Second" };

@@ -3,12 +3,11 @@
     xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:l="clr-namespace:AvaloniaExtensions.Axaml.Demo.I18n"
     xmlns:markup="https://codewf.com"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:models="clr-namespace:AvaloniaExtensions.Axaml.Demo.Models"
     xmlns:vm="using:AvaloniaExtensions.Axaml.Demo.ViewModels"
-    Title="{markup:I18n {Binding Title}}"
+    Title="Demo"
     Width="600"
     Height="300"
     d:DesignHeight="300"
@@ -29,10 +28,10 @@
         <markup:EnumToBooleanConverter x:Key="EnumToBooleanConverter" />
         <markup:IfConditionConverter x:Key="StatusConditionConverter">
             <markup:IfConditionConverter.True>
-                <TextBlock Foreground="Green" Text="{markup:I18n {x:Static l:Language.Running}}" />
+                <TextBlock Foreground="Green" Text="运行" />
             </markup:IfConditionConverter.True>
             <markup:IfConditionConverter.False>
-                <TextBlock Foreground="DarkOrange" Text="{markup:I18n {x:Static l:Language.NotRunning}}" />
+                <TextBlock Foreground="DarkOrange" Text="未运行" />
             </markup:IfConditionConverter.False>
         </markup:IfConditionConverter>
         <markup:IsCollectionEmptyConverter x:Key="IsCollectionEmptyConverter" />
@@ -55,42 +54,11 @@
         Classes="Shadow"
         Theme="{StaticResource CardBorder}">
         <TabControl TabStripPlacement="Left">
-            <TabItem Header="I18n">
-                <Border Theme="{StaticResource CardBorder}">
-                    <StackPanel>
-                        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                            <SelectableTextBlock Text="{markup:I18n {Binding Title}}" />
-                            <SelectableTextBlock Text="{markup:I18n {x:Static l:Language.Welcome}}" />
-                            <SelectableTextBlock Text="{markup:I18n {x:Static l:Language.RunningCountInfo}, Win11, x64}" />
-                            <SelectableTextBlock Text="{markup:I18n {x:Static l:Language.CurrentTimeFormat}, {Binding CurrentTime}}" />
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal">
-                            <Button
-                                Command="{Binding RaiseChangeLanguageHandler}"
-                                CommandParameter="en"
-                                Content="English" />
-                            <Button
-                                Command="{Binding RaiseChangeLanguageHandler}"
-                                CommandParameter="zh-CN"
-                                Content="中文简体" />
-                            <Button
-                                Command="{Binding RaiseChangeLanguageHandler}"
-                                CommandParameter="zh-Hant"
-                                Content="中文繁體" />
-                            <Button
-                                Command="{Binding RaiseChangeLanguageHandler}"
-                                CommandParameter="ja-JP"
-                                Content="日本語" />
-                        </StackPanel>
-                    </StackPanel>
-                </Border>
-            </TabItem>
             <TabItem Header="If">
                 <Border Theme="{StaticResource CardBorder}">
                     <StackPanel>
                         <Button Command="{Binding RaiseChangeStatusCommandHandler}" Content="Change" />
                         <SelectableTextBlock Text="{markup:If {Binding Status}, 已运行, 未运行}" />
-                        <SelectableTextBlock Text="{markup:If {Binding Status}, {markup:I18n {x:Static l:Language.Running}}, {markup:I18n {x:Static l:Language.NotRunning}}}" />
 
                         <ContentControl Content="{Binding Status, Converter={StaticResource StatusConditionConverter}}" />
                     </StackPanel>
